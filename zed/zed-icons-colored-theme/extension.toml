@@ -1,0 +1,22 @@
+id = "colored-zed-icons-theme"
+name = "Colored Zed Icons Theme"
+version = "0.3.1"
+schema_version = 1
+authors = ["TheRedXD", "Zed Industries <support@zed.dev>"]
+description = "Default Zed icons, but colored!"
+repository = "https://github.com/TheRedXD/zed-icons-colored-theme"
+themes = []
+languages = []
+capabilities = []
+
+[lib]
+
+[grammars]
+
+[language_servers]
+
+[context_servers]
+
+[slash_commands]
+
+[indexed_docs_providers]
