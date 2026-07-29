@@ -1,0 +1,28 @@
+[[events]]
+name = "Новый Год"
+start = "2025-01-01 00:00"
+repeat = "yearly"
+
+[[events]]
+name = "Днюха"
+start = "2007-03-24 00:00"
+duration_min = 1440
+repeat = "yearly"
+
+[[events]]
+name = "Нг каникулы"
+start = "2026-01-01 00:00"
+end = "2026-01-08 00:00"
+repeat = "yearly"
+
+[[events]]
+name = "Днюха Диниила"
+start = "2008-01-09 00:00"
+duration_min = 1440
+repeat = "yearly"
+
+[[events]]
+name = "Днюха Олеси"
+start = "2008-01-23 00:00"
+duration_min = 1440
+repeat = "yearly"

@@ -1,0 +1,133 @@
+{
+  "cpu": {
+    "format": " {usage}%",
+    "precision": 0,
+    "interval": 1000,
+    "thresholds": [60, 85], // Опционально: цвета для нагрузки
+  },
+
+  "memory": {
+    "interval": 3000,
+    "precision": 2,
+    "unit": "GiB",
+    // Теперь это стандартные поля, которые понимает utils
+    "format": " {used}GB",
+    "tooltip": "Свободно: [{free}/{total}]\nSwap: [{swap_used}/{swap_total}]",
+    "thresholds": [70, 90],
+  },
+
+  "network": {
+    "format": " {down}{down_unit}  {up}{up_unit}",
+    "icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"], // Переименовано в icons
+    "precision": 0,
+    "interval": 1000,
+  },
+
+  "disk": [
+    // Диски оставляем без изменений по твоему требованию
+    {
+      "path": "/",
+      "precision": 2,
+      "interval": 60000,
+      "format_complex": {
+        "text": "󰋊 {disk:free}",
+        "tooltip": "󰋊 Root: {disk:used} из {disk:total}",
+      },
+    },
+    {
+      "path": "/mnt/sda1",
+      "precision": 2,
+      "interval": 60000,
+      "format_complex": {
+        "text": "",
+        "tooltip": "󰋊 Games: {disk:used} из {disk:total}",
+      },
+    },
+  ],
+
+  "temp": {
+    "sensor_name": "coretemp",
+    "label": "Package id 0",
+    "precision": 0,
+    "interval": 20000,
+    "format": "{icon} {temp}°C", // Тег изменен на {temp} согласно коду модуля
+    "icons": ["", "", "", "", "", ""],
+    "thresholds": [65, 85, 100], // Заменяет critical_threshold для логики цвета
+  },
+
+  "clock": {
+    "format": "{icon} %H:%M | %a %e %b",
+    "icons": ["󱑖", "󱑋", "󱑌", "󱑍", "󱑎", "󱑏", "󱑐", "󱑑", "󱑒", "󱑓", "󱑔", "󱑕"],
+    "tooltip": "<span font_family='JetBrains Mono' size='15000'>{}</span>",
+    "calendar_title_color": "#dbbc7f",
+    "calendar_today_color": "#ff5555",
+    "calendar_color": "#d3c6aa",
+    "locale": "ru_RU",
+    "interval": 1000,
+  },
+
+  "gpu": {
+    "device": "nvidia", // В коде поле называется device, а не vendor
+    "format": "󰢮 {usage}%",
+    "icons": ["󰢮"],
+    "precision": 0,
+    "interval": 1000,
+  },
+
+  "timer": {
+    "events": [
+      {
+        "name": "Новый Год",
+        "start": "2025-01-01 00:00",
+        "repeat": "yearly",
+        "active": true,
+      },
+      {
+        "name": "Нг каникулы",
+        "start": "2026-01-01 00:00",
+        "end": "2026-01-08 00:00",
+        "repeat": "yearly",
+        "active": true,
+      },
+      {
+        "name": "Др",
+        "start": "2007-03-24 00:00",
+        "repeat": "yearly",
+        "active": true,
+      },
+      {
+        "name": "Др Диниила",
+        "start": "2008-01-09 00:00",
+        "repeat": "yearly",
+        "active": true,
+      },
+      {
+        "name": "Др Олеси",
+        "start": "2008-01-23 00:00",
+        "repeat": "yearly",
+        "active": true,
+      },
+    ],
+  },
+  "updates": {
+    "check_commands": [
+      { "command": "checkupdates", "label": "" }, // Без метки для системных
+      { "command": "paru -Qua", "label": "AUR" },   // Помечать как AUR
+      //{ "command": "flatpak remote-ls --updates --column=name", "label": "FP" } // Если есть флатпаки
+    ],
+    "interval": 3600000,
+    "format": "󰚰 {value}",
+    "tooltip": "Доступно обновлений:\n{list}",
+  },
+  "idle": {
+      "format": "{icon}",
+      "tooltip": "Состояние: {value}",
+      "icons": ["", ""] // 0: выкл (спит), 1: вкл (глаз)
+  },
+  "language": {
+      "format": "{text}", 
+      "tooltip": "Раскладка: {full_name}",
+      "icons": null,
+      "thresholds": null
+  }
+}

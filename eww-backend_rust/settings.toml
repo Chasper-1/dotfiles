@@ -1,0 +1,9 @@
+# Глобальные настройки путей
+[paths]
+disks_config = "~/.config/eww-backend_rust/config.jsonc"
+timer_config = "~/.config/eww-backend_rust/timer.toml"
+
+# Настройки поведения
+[general]
+refresh_interval_disks = 1
+refresh_interval_timer = 1
