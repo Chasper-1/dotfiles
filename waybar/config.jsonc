@@ -1,0 +1,39 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top",
+      "position": "top",
+      "height": 30,
+      "margin-top": 4,
+      "margin-bottom": -2,
+  
+  // Choose the order of the modules
+   
+  "modules-left": [
+    "hyprland/workspaces",
+    "cpu",
+    "memory",
+    "custom/disk",
+    "custom/temp",
+    "custom/date-timer",
+    "custom/aur",
+    "tray",
+    "idle_inhibitor"
+  ],
+  
+  "modules-center": [
+    "mpris"
+  ],
+  
+  "modules-right": [  
+    "wireplumber",
+    "wireplumber#source",
+    "bluetooth",
+    "custom/mouse",
+    "hyprland/language",
+    "network",
+    "custom/clock"
+  ],
+  
+  //Modules configuration
+  "include": ["~/.config/waybar/modules.json"]
+}

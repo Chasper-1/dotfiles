@@ -1,0 +1,104 @@
+configuration {
+    modi: "window,drun,run,calc";
+    font: "jetbrains mono 14"; // Из твоего style.css
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "Поиск";
+    display-calc: "Калькулятор";
+    terminal: "kitty"; // или твой терминал
+    drun-display-format: "{name}";
+    location: 0; // Центр, как в твоем конфиге
+    disable-history: false;
+    hide-scrollbar: true;
+    sidebar-mode: true;
+}
+
+@theme "/dev/null" // Сбрасываем дефолтную тему
+
+* {
+    /* Цвета из твоего style.css */
+    bg: rgba(39, 46, 51, 0.9);
+    bg-alt: rgba(44, 52, 59, 0.9);
+    fg: rgba(211, 198, 170, 0.9);
+    accent: rgba(136, 130, 117, 0.9); // yellowd-color
+    red:     rgba(230, 126, 128, 0.9);
+    redd:    rgba(179, 95, 96, 0.9);
+    green:   rgba(167, 192, 128, 0.9);
+    yellow:  rgba(219, 188, 127, 0.9);
+    yellowd: rgba(136, 130, 117, 0.9);
+    blue:    rgba(127, 187, 179, 0.9);
+    magenta: rgba(214, 153, 182, 0.9);
+    cyan:    rgba(131, 192, 146, 0.9);
+
+    background-color: transparent;
+    text-color: @fg;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    width: 740px; // Из твоего config
+    height: 788px;
+    background-color: @bg;
+    border: 4px;
+    border-color: @accent;
+    border-radius: 20px; // Из твоего style.css
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: @bg-alt;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+prompt {
+    padding: 12px;
+    background-color: @accent;
+    text-color: @bg;
+}
+
+entry {
+    margin: 12px;
+}
+
+listview {
+    padding: 4px;
+    columns: 3;
+    fixed-height: false;
+}
+
+element {
+    padding: 10px;
+    spacing: 10px;
+    border-radius: 12px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: @bg;
+}
+
+element-icon {
+    size: 32px;
+}
+
+button{
+    background-color: @fg;
+    text-color:       @bg;
+    border-radius:    8px 5px 0px 0px; /* Скругляем только верх, чтобы было похоже на вкладку */
+    margin: 0px 4px;
+}
+
+button selected {
+  background-color: @green;
+  text-color: @bg;
+  /* Можно добавить скругление сверху, чтобы было похоже на вкладку браузера */
+  border-radius: 14px 14px 0px 0px;
+}

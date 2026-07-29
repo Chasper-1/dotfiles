@@ -1,0 +1,192 @@
+@define-color base-bg #272e33;
+@define-color text-fg #d3c6aa;
+
+@define-color red-color #e67e80;
+@define-color green-color #a7c080;
+@define-color yellow-color #dbbc7f;
+@define-color blue-color #7fbbb3;
+@define-color magenta-color #d699b6;
+@define-color cyan-color #83c092;
+
+@define-color base-bg       rgba(39, 46, 51, 0.9);
+@define-color text-fg       rgba(211, 198, 170, 0.9);
+
+@define-color red-color     rgba(230, 126, 128, 0.9);
+@define-color green-color   rgba(167, 192, 128, 0.9);
+@define-color yellow-color  rgba(219, 188, 127, 0.9);
+@define-color blue-color    rgba(127, 187, 179, 0.9);
+@define-color magenta-color rgba(214, 153, 182, 0.9);
+@define-color cyan-color    rgba(131, 192, 146, 0.9);
+
+* {
+    font-family: Inter;
+    font-size: 14px;
+    transition: background-color 0.3s ease-out;
+}
+
+window#waybar {
+    background: transparent;
+    color: rgba(211, 198, 170, 0.87);;
+    font-weight: 700;
+    transition: background-color 0.5s;
+}
+
+/*Единный остров*/
+#workspaces,
+#bluetooth,
+#idle_inhibitor,
+#tray,
+#mpris,
+#wireplumber,
+#custom-aur,
+#custom-date-timer,
+#custom-mouse {
+    background-color: rgba(39, 46, 51, 0.87);;
+    border-radius: 16px;
+}
+
+/*Левая часть у островов*/
+#cpu,
+#language {
+    background-color: rgba(39, 46, 51, 0.87);;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+/*Правая часть у островов*/
+#custom-clock,
+#custom-temp {
+    background-color: rgba(39, 46, 51, 0.87);;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+/*Центральная часть островов*/
+#memory,
+#custom-disk,
+#network {
+    background-color: rgba(39, 46, 51, 0.87);;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 0px 3px;
+    padding: 0px 3px;
+}
+
+/*Отступы внутри*/
+#custom-mouse,
+#custom-aur,
+#custom-date-timer,
+#custom-clock,
+#battery,
+#cpu,
+#memory,
+#custom-disk,
+#custom-temp,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#wireplumber.source,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#language,
+#bluetooth,
+#mpris {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#custom-clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#custom-disk:hover,
+#custom-temp:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#mode:hover,
+#scratchpad:hover,
+#power-profiles-daemon:hover,
+#language:hover {
+    color: rgba(219, 188, 127, 1);
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+#custom-mouse:hover,
+#bluetooth:hover,
+#wireplumber:hover,
+#idle_inhibitor:hover,
+#tray:hover,
+#custom-aur:hover,
+#custom-date-timer:hover,
+#mpris:hover {
+    background-color: rgba(219, 188, 127, 0.9);
+    color: rgba(39, 46, 51, 0.9);
+}
+
+#workspaces {
+    margin-right: 4px;
+}
+
+#workspaces button {
+    background: transparent;
+    font-weight: 800;
+    color: #d3c6aa;
+    border-radius: 14px;
+    margin: 1px;
+}
+
+#workspaces button.active {
+    background: rgba(219, 188, 127, 0.9);
+    color: rgba(39, 46, 51, 0.9);
+}
+
+#workspaces button:hover {
+    background: rgba(214, 153, 182, 0.9);
+    color: rgba(39, 46, 51, 0.9);
+}
+
+#custom-mouse,
+#bluetooth,
+#wireplumber.source,
+#wireplumber {
+    margin-right: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+#custom-date-timer,
+#custom-aur,
+#idle_inhibitor,
+#tray {
+    margin-left: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+#cpu,
+#language {
+    padding-left: 7px;
+}
+
+#custom-temp, 
+#custom-clock {
+    padding-right: 7px;
+}
+
+#mpris.paused {
+    background-color: rgba(214, 153, 182, 0.9);
+    color: rgba(39, 46, 51, 0.9);
+}
+
+#mpris.paused:hover {
+    background-color: rgba(230, 126, 128, 0.9);
+}
