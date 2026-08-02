@@ -114,124 +114,89 @@ hl.workspace_rule({ workspace = "special:easyeffects",})
 
 -- —— Windows —————————————————————————————————————————————————————————————————
 hl.window_rule({
-    match = {
-        float = true,
-        class = "(clipse)",
-    },
+    match = { float = true, class = "(clipse)", },
 })
 
 hl.window_rule({
-    match = {
-        class = "(clipse)",
-    },
+    match = { class = "(clipse)", },
     size = "622 652",
 })
 
 hl.window_rule({
-    match = {
-        class = "io.github.elyprismlauncher.ElyPrismLauncher",
-    },
+    match = { class = "io.github.elyprismlauncher.ElyPrismLauncher", },
     center = true,
 })
 
 hl.window_rule({
-    match = {
-        class = "io.github.elyprismlauncher.ElyPrismLauncher title:",
-    },
+    match = { class = "io.github.elyprismlauncher.ElyPrismLauncher title:", },
     float = true,
 })
 
 hl.window_rule({
-    match = {
-        class = "io.github.elyprismlauncher.ElyPrismLauncher",
-    },
+    match = { class = "io.github.elyprismlauncher.ElyPrismLauncher", },
     size = "1200 600",
 })
 
 hl.window_rule({
-    match = {
-        class = "swayimg",
-    },
+    match = { class = "swayimg", },
     float = true,
 })
 
 hl.window_rule({
-    match = {
-        class = "org.pulseaudio.pavucontrol",
-    },
+    match = { class = "org.pulseaudio.pavucontrol", },
     size = "700 500",
     float = true,
 })
 
 hl.window_rule({
-    match = {
-        class = "flameshot",
-    },
+    match = { class = "flameshot", },
     float = true,
 })
 
 hl.window_rule({
-    match = {
-        class = "PortProton",
-    },
+    match = { class = "PortProton", },
     float = true,
 })
 
 hl.window_rule({
-    match = {
-        class = "thunar",
-        title = "^(Переименовать).*",
-    },
+    match = { class = "thunar", title = "^(Переименовать).*", },
     float = true,
     size = "600 100",
 })
 
+-- —— Start window in workspace ———————————————————————————
 hl.window_rule({
-    match = {
-        class = "obsidian",
-    },
+    match = { class = "obsidian", },
     workspace = "6",
 })
 
 hl.window_rule({
-    match = {
-        class = "zen",
-    },
+    match = { class = "zen", },
     workspace = "1",
 })
 
 hl.window_rule({
-    match = {
-        class = "dev.zed.Zed",
-    },
+    match = { class = "dev.zed.Zed", },
     workspace = "10",
 })
 
 hl.window_rule({
-    match = {
-        class = "spotify",
-    },
+    match = { class = "spotify", },
     workspace = "special:music silent",
 })
 
 hl.window_rule({
-    match = {
-        class = "YandexMusic",
-    },
+    match = { class = "YandexMusic", },
     workspace = "special:music silent",
 })
 
 hl.window_rule({
-    match = {
-        class = "kitty",
-    },
+    match = { class = "kitty", },
     workspace = "special:terminal",
 })
 
 hl.window_rule({
-    match = {
-        class = "com.github.wwmm.easyeffects",
-    },
+    match = { class = "com.github.wwmm.easyeffects",},
     workspace = "special:easyeffects silent",
 })
 
