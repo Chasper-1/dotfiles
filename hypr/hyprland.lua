@@ -40,7 +40,7 @@ hl.on("hyprland.start", function ()
 
     -- —— PROGRAMS ————————————————————————————————————————————————————————————
     hl.exec_cmd("[workspace 1 silent] zen-browser")
-    hk.exec_cmd("[workspace special:terminal silent]" .. terminal)
+    hl.exec_cmd("[workspace special:terminal silent]" .. terminal)
 end)
 
 -- —— ENVIRONMENT VARIABLES ———————————————————————————————————————————————————————————————————————
@@ -82,7 +82,7 @@ hl.curve("nk", { type = "bezier", points = { { 0, 1 }, { 1, 1 } } })   -- My cur
 hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default",})
 hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint",})
 hl.animation({ leaf = "windows", enabled = true, speed = 4.79, bezier = "easeOutQuint", style = "slide",})
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, bezier = "easeOutQuint", tyle = "slide",})
+hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, bezier = "easeOutQuint", style = "slide",})
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.49, bezier = "linear", style = "popin",})
 hl.animation({ leaf = "windowsMove", enabled = true, speed = 2.49, bezier = "nk",})
 hl.animation({ leaf = "fadeIn", enabled = true, speed = 1.73, bezier = "almostLinear",})
@@ -128,7 +128,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "io.github.elyprismlauncher.ElyPrismLauncher title:", },
+    match = { class = "io.github.elyprismlauncher.ElyPrismLauncher", title = ".*", },
     float = true,
 })
 
@@ -202,13 +202,13 @@ hl.window_rule({
 
 -- —— Layer ———————————————————————————————————————————————————————————————————
 hl.layer_rule({
-    match = { namespace = "match:namespace waybar" },
+    match = { namespace = "waybar", },
     blur = true,
     ignore_alpha = 0,
 })
 
 hl.layer_rule({
-    match = { namespace = "match:namespace rofi" },
+    match = { namespace = "rofi", },
     blur = true,
     ignore_alpha = 0,
 })
@@ -248,7 +248,7 @@ hl.bind("mainMod + mainS + F11", hl.dsp.window.fullscreen({ mode = "fullscreen",
 hl.bind("mainMod + U", hl.dsp.exec_cmd("hyprpicker -a -f rgb"))
 hl.bind("mainMod + mainS + P", hl.dsp.exec_cmd(keepass))
 hl.bind("mainMod + T", hl.dsp.exec_cmd("~/.config/rofi/rofi-tran-live.py"))
-hl.bind("mainMod+Shift + End", hl.dsp.exec_cmd("~/Документы/code/скрипты/safe_shutdown.sh"))
+hl.bind("mainMod + Shift + End", hl.dsp.exec_cmd("~/Документы/code/скрипты/safe_shutdown.sh"))
 hl.bind("mainC + mainA + D", hl.dsp.exec_cmd(cleaner))
 hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"))
 hl.bind("mainS + Print", hl.dsp.exec_cmd("flameshot screen"))
@@ -415,7 +415,7 @@ hl.config({
         },
     },
     animations = {
-        enabled = "yes, please :)",
+        enabled = true,
         --        NAME,           X0,   Y0,   X1,   Y1
         --           NAME,                ONOFF, SPEED, CURVE,        [STYLE]
     },
