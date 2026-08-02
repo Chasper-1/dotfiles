@@ -274,16 +274,16 @@ hl.bind("mainA + Q", hl.dsp.exec_cmd(terminal))
 hl.bind("mainMod + C", hl.dsp.window.close())
 hl.bind("mainMod + M", hl.dsp.exit())
 hl.bind("mainMod + E", hl.dsp.exec_cmd(fileManager))
-hl.bind("Shift+$mainMod + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind("Shift+mainMod + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("mainMod + P", hl.dsp.window.pseudo())
 hl.bind("mainMod + F11", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
-hl.bind("$mainMod + $mainS + F11", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
+hl.bind("mainMod + mainS + F11", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 
 -- —— Basic utilits ———————————————————————————————————————
 hl.bind("mainMod + U", hl.dsp.exec_cmd("hyprpicker -a -f rgb"))
-hl.bind("$mainMod + $mainS + P", hl.dsp.exec_cmd(keepass))
+hl.bind("mainMod + mainS + P", hl.dsp.exec_cmd(keepass))
 hl.bind("mainMod + T", hl.dsp.exec_cmd("~/.config/rofi/rofi-tran-live.py"))
-hl.bind("$mainMod+Shift + End", hl.dsp.exec_cmd("~/Документы/code/скрипты/safe_shutdown.sh"))
+hl.bind("mainMod+Shift + End", hl.dsp.exec_cmd("~/Документы/code/скрипты/safe_shutdown.sh"))
 hl.bind("mainC + mainA + D", hl.dsp.exec_cmd(cleaner))
 hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"))
 hl.bind("mainS + Print", hl.dsp.exec_cmd("flameshot screen"))
@@ -293,8 +293,8 @@ hl.bind("mainMod + D", hl.dsp.exec_cmd(menu))
 hl.bind("mainMod + B", hl.dsp.exec_cmd(menu_galery))
 hl.bind("mainMod + V", hl.dsp.exec_cmd(menu_clip))
 hl.bind("mainMod + A", hl.dsp.exec_cmd(menu_translate))
-hl.bind("$mainMod + $mainC + A", hl.dsp.exec_cmd(menu_translate %-%-copy))
-hl.bind("$mainMod + $mainS + D", hl.dsp.exec_cmd(menu_calc))
+hl.bind("mainMod + mainC + A", hl.dsp.exec_cmd(menu_translate %-%-copy))
+hl.bind("mainMod + mainS + D", hl.dsp.exec_cmd(menu_calc))
 
 -- —— Start programs ——————————————————————————————————————
 hl.bind("mainMod + Z", hl.dsp.exec_cmd(zed))
@@ -495,10 +495,10 @@ hl.config({
     --
     -- See https://wiki.hypr.land/Configuring/Keywords/
     -- Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
-    --bind = $mainMod, J, togglesplit,  dwindle
-    --bind = $mainMod, Tab, hyprexpo:expo, toggle
-    --bind = $mainA, right, layoutmsg, focus r
-    --bind = $mainA, left, layoutmsg, focus l
+    --bind = mainMod, J, togglesplit,  dwindle
+    --bind = mainMod, Tab, hyprexpo:expo, toggle
+    --bind = mainA, right, layoutmsg, focus r
+    --bind = mainA, left, layoutmsg, focus l
     -- Move focus with mainMod + arrow keys
     -- Switch workspaces with mainMod + [0-9]
     -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -513,9 +513,9 @@ hl.config({
     -- See https://wiki.hypr.land/Configuring/Window-Rules/ for more
     -- See https://wiki.hypr.land/Configuring/Workspace-Rules/ for workspace rules
     -- Example windowrule
-    --windowrule = float,class:^(kitty)$,title:^(kitty)$
+    --windowrule = float,class:^(kitty),title:^(kitty)
     -- Ignore maximize requests from apps. You'll probably like this.
     --windowrule = suppressevent maximize, class:.*
     -- Fix some dragging issues with XWayland
-    --windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
+    --windowrule = nofocus,class:^,title:^,xwayland:1,floating:1,fullscreen:0,pinned:0
 })
