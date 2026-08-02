@@ -25,20 +25,20 @@ local cleaner = "~/.local/bin/cleaner"
 
 hl.on("hyprland.start", function ()
 
-    -- —— SYSTEM SETTINGS —————————————————————————————————————————————————————
+    -- —— System settings —————————————————————————————————————————————————————
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("/usr/lib/xdg-desktop-portal")
     hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 
-    -- —— CLIPHIST ————————————————————————————————————————————————————————————
+    -- —— Cliphist ————————————————————————————————————————————————————————————
     hl.exec_cmd("wl-paste --type text --watch cliphist store # Stores only text data")
     hl.exec_cmd("wl-paste --type image --watch cliphist store # Stores only image data")
 
-    -- —— UTILITS —————————————————————————————————————————————————————————————
+    -- —— Utilits —————————————————————————————————————————————————————————————
     hl.exec_cmd("awww-daemon & waybar & dunst & hypridle")
 
-    -- —— PROGRAMS ————————————————————————————————————————————————————————————
+    -- —— Programs ————————————————————————————————————————————————————————————
     hl.exec_cmd("[workspace 1 silent] zen-browser")
     hl.exec_cmd("[workspace special:terminal silent]" .. terminal)
 end)
@@ -226,7 +226,7 @@ hl.device({
 
 -- —— HOTKEYS —————————————————————————————————————————————————————————————————————————————————
 
--- —— Mackros —————————————————————————————————————————————————————————————————
+-- —— Macros —————————————————————————————————————————————————————————————————
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 local mainS = "SHIFT"
 local mainC = "CTRL"
@@ -374,7 +374,7 @@ hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURC
 
 -- —— Brightness ——————————————————————————————————————————————————————————————
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnesDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
 -- —— Management playback —————————————————————————————————————————————————————
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
