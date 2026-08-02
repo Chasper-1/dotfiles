@@ -5,7 +5,7 @@ hl.monitor({
     mode = "1920x1080@165",
     position = "0x0",
     scale = "1",
-    addreserved = { top = 0, bottom = 26, left = 0, right = 0 },
+    reserved_area = { top = 0, bottom = 26, left = 0, right = 0 },
 })
 
 -- —— MY PROGRAMS —————————————————————————————————————————————————————————————————————————————————
@@ -213,7 +213,7 @@ hl.layer_rule({
     ignore_alpha = 0,
 })
 
--- —— 
+-- ——
 hl.gesture({
     fingers = 3,
     direction = "horizontal",
@@ -226,143 +226,137 @@ hl.device({
 
 -- —— HOTKEYS —————————————————————————————————————————————————————————————————————————————————
 
--- —— Macros —————————————————————————————————————————————————————————————————
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
-local mainS = "SHIFT"
-local mainC = "CTRL"
-local mainA = "ALT"
-
 -- —— Keybinds ————————————————————————————————————————————————————————————————
 
 -- —— Basic ———————————————————————————————————————————————
-hl.bind("mainA + Q", hl.dsp.exec_cmd(terminal))
-hl.bind("mainMod + C", hl.dsp.window.close())
-hl.bind("mainMod + M", hl.dsp.exit())
-hl.bind("mainMod + E", hl.dsp.exec_cmd(fileManager))
-hl.bind("Shift+mainMod + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind("mainMod + P", hl.dsp.window.pseudo())
-hl.bind("mainMod + F11", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
-hl.bind("mainMod + mainS + F11", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
+hl.bind("ALT + Q", hl.dsp.exec_cmd(terminal))
+hl.bind("SUPER + C", hl.dsp.window.close())
+hl.bind("SUPER + M", hl.dsp.exit())
+hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
+hl.bind("SUPER + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind("SUPER + P", hl.dsp.window.pseudo())
+hl.bind("SUPER + F11", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
+hl.bind("SUPER + SHIFT + F11", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 
 -- —— Basic utilits ———————————————————————————————————————
-hl.bind("mainMod + U", hl.dsp.exec_cmd("hyprpicker -a -f rgb"))
-hl.bind("mainMod + mainS + P", hl.dsp.exec_cmd(keepass))
-hl.bind("mainMod + T", hl.dsp.exec_cmd("~/.config/rofi/rofi-tran-live.py"))
-hl.bind("mainMod + Shift + End", hl.dsp.exec_cmd("~/Документы/code/скрипты/safe_shutdown.sh"))
-hl.bind("mainC + mainA + D", hl.dsp.exec_cmd(cleaner))
+hl.bind("SUPER + U", hl.dsp.exec_cmd("hyprpicker -a -f rgb"))
+hl.bind("SUPER + SHIFT + P", hl.dsp.exec_cmd(keepass))
+hl.bind("SUPER + T", hl.dsp.exec_cmd("~/.config/rofi/rofi-tran-live.py"))
+hl.bind("SUPER + SHIFT + End", hl.dsp.exec_cmd("~/Документы/code/скрипты/safe_shutdown.sh"))
+hl.bind("CTRL + ALT + D", hl.dsp.exec_cmd(cleaner))
 hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"))
-hl.bind("mainS + Print", hl.dsp.exec_cmd("flameshot screen"))
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd("flameshot screen"))
 
 -- —— Rofi menu ———————————————————————————————————————————
-hl.bind("mainMod + D", hl.dsp.exec_cmd(menu))
-hl.bind("mainMod + B", hl.dsp.exec_cmd(menu_galery))
-hl.bind("mainMod + V", hl.dsp.exec_cmd(menu_clip))
-hl.bind("mainMod + A", hl.dsp.exec_cmd(menu_translate))
-hl.bind("mainMod + mainC + A", hl.dsp.exec_cmd(menu_translate .. " --copy"))
-hl.bind("mainMod + mainS + D", hl.dsp.exec_cmd(menu_calc))
+hl.bind("SUPER + D", hl.dsp.exec_cmd(menu))
+hl.bind("SUPER + B", hl.dsp.exec_cmd(menu_galery))
+hl.bind("SUPER + V", hl.dsp.exec_cmd(menu_clip))
+hl.bind("SUPER + A", hl.dsp.exec_cmd(menu_translate))
+hl.bind("SUPER + CTRL + A", hl.dsp.exec_cmd(menu_translate .. " --copy"))
+hl.bind("SUPER + SHIFT + D", hl.dsp.exec_cmd(menu_calc))
 
 -- —— Start programs ——————————————————————————————————————
-hl.bind("mainMod + Z", hl.dsp.exec_cmd(zed))
+hl.bind("SUPER + Z", hl.dsp.exec_cmd(zed))
 
 -- —— Move window focus ———————————————————————————————————
-hl.bind("mainA + left", hl.dsp.focus({ direction = "left" }))
-hl.bind("mainA + right", hl.dsp.focus({ direction = "right" }))
-hl.bind("mainA + up", hl.dsp.focus({ direction = "up" }))
-hl.bind("mainA + down", hl.dsp.focus({ direction = "down" }))
+hl.bind("ALT + left", hl.dsp.focus({ direction = "left" }))
+hl.bind("ALT + right", hl.dsp.focus({ direction = "right" }))
+hl.bind("ALT + up", hl.dsp.focus({ direction = "up" }))
+hl.bind("ALT + down", hl.dsp.focus({ direction = "down" }))
 
 -- —— Move window position ————————————————————————————————
-hl.bind("mainS + left", hl.dsp.window.move({ direction = "l" }))
-hl.bind("mainS + right", hl.dsp.window.move({ direction = "r" }))
-hl.bind("mainS + up", hl.dsp.window.move({ direction = "u" }))
-hl.bind("mainS + down", hl.dsp.window.move({ direction = "d" }))
+hl.bind("SHIFT + left", hl.dsp.window.move({ direction = "l" }))
+hl.bind("SHIFT + right", hl.dsp.window.move({ direction = "r" }))
+hl.bind("SHIFT + up", hl.dsp.window.move({ direction = "u" }))
+hl.bind("SHIFT + down", hl.dsp.window.move({ direction = "d" }))
 
 -- —— WORKSPACES ——————————————————————————————————————————————————————————————————————————————————
 
 -- —— Focus 1-10 ——————————————————————————————————————————————————————————————
-hl.bind("mainMod + 1", hl.dsp.focus({ workspace = 1 }))
-hl.bind("mainMod + 2", hl.dsp.focus({ workspace = 2 }))
-hl.bind("mainMod + 3", hl.dsp.focus({ workspace = 3 }))
-hl.bind("mainMod + 4", hl.dsp.focus({ workspace = 4 }))
-hl.bind("mainMod + 5", hl.dsp.focus({ workspace = 5 }))
-hl.bind("mainMod + 6", hl.dsp.focus({ workspace = 6 }))
-hl.bind("mainMod + 7", hl.dsp.focus({ workspace = 7 }))
-hl.bind("mainMod + 8", hl.dsp.focus({ workspace = 8 }))
-hl.bind("mainMod + 9", hl.dsp.focus({ workspace = 9 }))
-hl.bind("mainMod + 0", hl.dsp.focus({ workspace = 10 }))
+hl.bind("SUPER + 1", hl.dsp.focus({ workspace = 1 }))
+hl.bind("SUPER + 2", hl.dsp.focus({ workspace = 2 }))
+hl.bind("SUPER + 3", hl.dsp.focus({ workspace = 3 }))
+hl.bind("SUPER + 4", hl.dsp.focus({ workspace = 4 }))
+hl.bind("SUPER + 5", hl.dsp.focus({ workspace = 5 }))
+hl.bind("SUPER + 6", hl.dsp.focus({ workspace = 6 }))
+hl.bind("SUPER + 7", hl.dsp.focus({ workspace = 7 }))
+hl.bind("SUPER + 8", hl.dsp.focus({ workspace = 8 }))
+hl.bind("SUPER + 9", hl.dsp.focus({ workspace = 9 }))
+hl.bind("SUPER + 0", hl.dsp.focus({ workspace = 10 }))
 
 -- —— Focus 11-20 —————————————————————————————————————————————————————————————
-hl.bind("mainMod + mainC + 1", hl.dsp.focus({ workspace = 11 }))
-hl.bind("mainMod + mainC + 2", hl.dsp.focus({ workspace = 12 }))
-hl.bind("mainMod + mainC + 3", hl.dsp.focus({ workspace = 13 }))
-hl.bind("mainMod + mainC + 4", hl.dsp.focus({ workspace = 14 }))
-hl.bind("mainMod + mainC + 5", hl.dsp.focus({ workspace = 15 }))
-hl.bind("mainMod + mainC + 6", hl.dsp.focus({ workspace = 16 }))
-hl.bind("mainMod + mainC + 7", hl.dsp.focus({ workspace = 17 }))
-hl.bind("mainMod + mainC + 8", hl.dsp.focus({ workspace = 18 }))
-hl.bind("mainMod + mainC + 9", hl.dsp.focus({ workspace = 19 }))
-hl.bind("mainMod + mainC + 0", hl.dsp.focus({ workspace = 20 }))
+hl.bind("SUPER + CTRL + 1", hl.dsp.focus({ workspace = 11 }))
+hl.bind("SUPER + CTRL + 2", hl.dsp.focus({ workspace = 12 }))
+hl.bind("SUPER + CTRL + 3", hl.dsp.focus({ workspace = 13 }))
+hl.bind("SUPER + CTRL + 4", hl.dsp.focus({ workspace = 14 }))
+hl.bind("SUPER + CTRL + 5", hl.dsp.focus({ workspace = 15 }))
+hl.bind("SUPER + CTRL + 6", hl.dsp.focus({ workspace = 16 }))
+hl.bind("SUPER + CTRL + 7", hl.dsp.focus({ workspace = 17 }))
+hl.bind("SUPER + CTRL + 8", hl.dsp.focus({ workspace = 18 }))
+hl.bind("SUPER + CTRL + 9", hl.dsp.focus({ workspace = 19 }))
+hl.bind("SUPER + CTRL + 0", hl.dsp.focus({ workspace = 20 }))
 
 -- —— Focus input —————————————————————————————————————————————————————————————
 
 -- —— Mouse ———————————————————————————————————————————————
-hl.bind("mainMod + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind("mainMod + mouse_up", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e+1" }))
 
 -- —— Keys ————————————————————————————————————————————————
-hl.bind("mainMod + left", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind("mainMod + right", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind("SUPER + left", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind("SUPER + right", hl.dsp.focus({ workspace = "e+1" }))
 
 -- —— Move 1-10 ———————————————————————————————————————————————————————————————
-hl.bind("mainMod + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }))
-hl.bind("mainMod + SHIFT + 2", hl.dsp.window.move({ workspace = 2 }))
-hl.bind("mainMod + SHIFT + 3", hl.dsp.window.move({ workspace = 3 }))
-hl.bind("mainMod + SHIFT + 4", hl.dsp.window.move({ workspace = 4 }))
-hl.bind("mainMod + SHIFT + 5", hl.dsp.window.move({ workspace = 5 }))
-hl.bind("mainMod + SHIFT + 6", hl.dsp.window.move({ workspace = 6 }))
-hl.bind("mainMod + SHIFT + 7", hl.dsp.window.move({ workspace = 7 }))
-hl.bind("mainMod + SHIFT + 8", hl.dsp.window.move({ workspace = 8 }))
-hl.bind("mainMod + SHIFT + 9", hl.dsp.window.move({ workspace = 9 }))
-hl.bind("mainMod + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
+hl.bind("SUPER + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }))
+hl.bind("SUPER + SHIFT + 2", hl.dsp.window.move({ workspace = 2 }))
+hl.bind("SUPER + SHIFT + 3", hl.dsp.window.move({ workspace = 3 }))
+hl.bind("SUPER + SHIFT + 4", hl.dsp.window.move({ workspace = 4 }))
+hl.bind("SUPER + SHIFT + 5", hl.dsp.window.move({ workspace = 5 }))
+hl.bind("SUPER + SHIFT + 6", hl.dsp.window.move({ workspace = 6 }))
+hl.bind("SUPER + SHIFT + 7", hl.dsp.window.move({ workspace = 7 }))
+hl.bind("SUPER + SHIFT + 8", hl.dsp.window.move({ workspace = 8 }))
+hl.bind("SUPER + SHIFT + 9", hl.dsp.window.move({ workspace = 9 }))
+hl.bind("SUPER + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
 
 -- —— Move 11-20 ——————————————————————————————————————————————————————————————
-hl.bind("mainMod + mainC + SHIFT + 1", hl.dsp.window.move({ workspace = 11 }))
-hl.bind("mainMod + mainC + SHIFT + 2", hl.dsp.window.move({ workspace = 12 }))
-hl.bind("mainMod + mainC + SHIFT + 3", hl.dsp.window.move({ workspace = 13 }))
-hl.bind("mainMod + mainC + SHIFT + 4", hl.dsp.window.move({ workspace = 14 }))
-hl.bind("mainMod + mainC + SHIFT + 5", hl.dsp.window.move({ workspace = 15 }))
-hl.bind("mainMod + mainC + SHIFT + 6", hl.dsp.window.move({ workspace = 16 }))
-hl.bind("mainMod + mainC + SHIFT + 7", hl.dsp.window.move({ workspace = 17 }))
-hl.bind("mainMod + mainC + SHIFT + 8", hl.dsp.window.move({ workspace = 18 }))
-hl.bind("mainMod + mainC + SHIFT + 9", hl.dsp.window.move({ workspace = 19 }))
-hl.bind("mainMod + mainC + SHIFT + 0", hl.dsp.window.move({ workspace = 20 }))
+hl.bind("SUPER + CTRL + SHIFT + 1", hl.dsp.window.move({ workspace = 11 }))
+hl.bind("SUPER + CTRL + SHIFT + 2", hl.dsp.window.move({ workspace = 12 }))
+hl.bind("SUPER + CTRL + SHIFT + 3", hl.dsp.window.move({ workspace = 13 }))
+hl.bind("SUPER + CTRL + SHIFT + 4", hl.dsp.window.move({ workspace = 14 }))
+hl.bind("SUPER + CTRL + SHIFT + 5", hl.dsp.window.move({ workspace = 15 }))
+hl.bind("SUPER + CTRL + SHIFT + 6", hl.dsp.window.move({ workspace = 16 }))
+hl.bind("SUPER + CTRL + SHIFT + 7", hl.dsp.window.move({ workspace = 17 }))
+hl.bind("SUPER + CTRL + SHIFT + 8", hl.dsp.window.move({ workspace = 18 }))
+hl.bind("SUPER + CTRL + SHIFT + 9", hl.dsp.window.move({ workspace = 19 }))
+hl.bind("SUPER + CTRL + SHIFT + 0", hl.dsp.window.move({ workspace = 20 }))
 
 -- —— INTERACTION THE WINDOW —————————————————————————————————————————————————————————————————————
 
 -- —— Mouse ———————————————————————————————————————————————————————————————————
-hl.bind("mainMod + mouse:272", hl.dsp.window.drag())
-hl.bind("mainMod + mouse:273", hl.dsp.window.resize())
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag())
+hl.bind("SUPER + mouse:273", hl.dsp.window.resize())
 
 -- —— WORKSPACES SPECIAL ——————————————————————————————————————————————————————————————————————————
 
-hl.bind("mainMod + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind("mainMod + mainS + S", hl.dsp.window.move({ workspace = "special:magic" }))
-hl.bind("mainMod + mainC + S", hl.dsp.window.move({ workspace = "+0" }))
+hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("magic"))
+hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind("SUPER + CTRL + S", hl.dsp.window.move({ workspace = "+0" }))
 
 -- —— Music ———————————————————————————————————————————————
-hl.bind("mainMod + X", hl.dsp.workspace.toggle_special("music"))
-hl.bind("mainMod + mainS + X", hl.dsp.window.move({ workspace = "special:music" }))
+hl.bind("SUPER + X", hl.dsp.workspace.toggle_special("music"))
+hl.bind("SUPER + SHIFT + X", hl.dsp.window.move({ workspace = "special:music" }))
 
 -- —— Terminal ————————————————————————————————————————————
-hl.bind("mainMod + Q", hl.dsp.workspace.toggle_special("terminal"))
-hl.bind("mainMod + mainS + Q", hl.dsp.window.move({ workspace = "special:terminal" }))
+hl.bind("SUPER + Q", hl.dsp.workspace.toggle_special("terminal"))
+hl.bind("SUPER + SHIFT + Q", hl.dsp.window.move({ workspace = "special:terminal" }))
 
 -- —— Games ———————————————————————————————————————————————
-hl.bind("mainMod + G", hl.dsp.workspace.toggle_special("games"))
-hl.bind("mainMod + mainS + G", hl.dsp.window.move({ workspace = "special:games" }))
+hl.bind("SUPER + G", hl.dsp.workspace.toggle_special("games"))
+hl.bind("SUPER + SHIFT + G", hl.dsp.window.move({ workspace = "special:games" }))
 
 -- —— EasyEffects —————————————————————————————————————————
-hl.bind("mainMod + H", hl.dsp.workspace.toggle_special("easyeffects"))
-hl.bind("mainMod + mainS + H", hl.dsp.window.move({ workspace = "special:easyeffects" }))
+hl.bind("SUPER + H", hl.dsp.workspace.toggle_special("easyeffects"))
+hl.bind("SUPER + SHIFT + H", hl.dsp.window.move({ workspace = "special:easyeffects" }))
 
 -- —— HOTKEY VOLUME ———————————————————————————————————————————————————————————————————————————————
 
@@ -420,7 +414,7 @@ hl.config({
         --           NAME,                ONOFF, SPEED, CURVE,        [STYLE]
     },
 
-    -- LAYERRULE 
+    -- LAYERRULE
 
     dwindle = {
         --pseudotile = true  Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
@@ -453,10 +447,10 @@ hl.config({
     },
     -- Example per-device config
     --
-    -- WORKSPACES 
+    -- WORKSPACES
     --
     --
-    -- KEYBINDINGS 
+    -- KEYBINDINGS
     --
     -- See https://wiki.hypr.land/Configuring/Keywords/
     -- Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
@@ -473,7 +467,7 @@ hl.config({
     -- Laptop multimedia keys for volume and LCD brightness
     -- Requires playerctl
     --
-    -- WINDOWS AND WORKSPACES 
+    -- WINDOWS AND WORKSPACES
     --
     -- See https://wiki.hypr.land/Configuring/Window-Rules/ for more
     -- See https://wiki.hypr.land/Configuring/Workspace-Rules/ for workspace rules
