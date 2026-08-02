@@ -237,25 +237,14 @@ hl.window_rule({
 
 -- —— Layer ———————————————————————————————————————————————————————————————————
 hl.layer_rule({
-    match = { namespace = "match:namespace waybar" }, blur = true
-})
-
-hl.layer_rule({
-    match = { namespace = "match:namespace rofi" }, blur = true
+    match = { namespace = "match:namespace waybar" },
+    blur = true,
+    ignore_alpha = 0,
 })
 
 hl.layer_rule({
     match = { namespace = "match:namespace rofi" },
-    ignore_alpha = 0,
-})
-
-hl.layer_rule({
-    match = { namespace = "match:namespace waybar" },
-    ignore_alpha = 0,
-})
-
-hl.layer_rule({
-    match = { namespace = "match:namespace snappy-switcher" },
+    blur = true,
     ignore_alpha = 0,
 })
 
