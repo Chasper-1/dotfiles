@@ -20,25 +20,25 @@ local menu_galery = "~/.config/rofi/galery-rofi.sh"
 local menu_translate = "~/.config/rofi/rofi-trans.py"
 local keepass = "cat -u ~/Документы/Secrets/Mypass-local.txt | wl-copy -n && ~/Документы/code/скрипты/timedead.sh & ~/.config/rofi/kpxc-rofi.sh"
 local cleaner = "~/.local/bin/cleaner"
-local cursor = "hyprctl setcursor Moga-Black 14"
 
 -- —— AUTOSTART ———————————————————————————————————————————————————————————————————————————————————
 
 hl.on("hyprland.start", function ()
-    -- SYSTEM SETTINGS
+
+    -- —— SYSTEM SETTINGS —————————————————————————————————————————————————————
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("/usr/lib/xdg-desktop-portal")
     hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 
-    -- CLIPHIST
+    -- —— CLIPHIST ————————————————————————————————————————————————————————————
     hl.exec_cmd("wl-paste --type text --watch cliphist store # Stores only text data")
     hl.exec_cmd("wl-paste --type image --watch cliphist store # Stores only image data")
 
-    -- UTILITS
+    -- —— UTILITS —————————————————————————————————————————————————————————————
     hl.exec_cmd("awww-daemon & waybar & dunst & hypridle")
 
-    -- PROGRAMS
+    -- —— PROGRAMS ————————————————————————————————————————————————————————————
     hl.exec_cmd("[workspace 1 silent] zen-browser")
     hk.exec_cmd("[workspace special:terminal silent]" .. terminal)
 end)
