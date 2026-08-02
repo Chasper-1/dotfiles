@@ -154,7 +154,7 @@
     "restart-interval": 3600,
     "return-type": "json",
     "on-click": "/home/kasper/Документы/code/скрипты/checkupdates-aur.sh --list | rofi -dmenu -i -p 'Обновления' -theme-str 'window { width: 600px; height: 772px;} listview { columns: 1; lines: 20; } element-text { wrap: true; margin: 12px 0px 12px -36px;} element { orientation: horizontal; padding: 0px;}'",
-    "on-click-right": "/home/kasper/Документы/code/скрипты/checkupdates-aur"
+    "on-click-right": "/home/kasper/Документы/code/скрипты/checkupdates-aur.sh"
   },
   "custom/date-timer": {
     "format": "{}",
@@ -166,6 +166,7 @@
     "format": "󰍽 {}",
     "exec": "~/.local/bin/mouse",
     "restart-interval": 1,
-    "return-type": "json"
+    "return-type": "json",
+    "class": "{}"
   }
 }
