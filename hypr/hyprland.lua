@@ -258,7 +258,7 @@ hl.bind("mainMod + D", hl.dsp.exec_cmd(menu))
 hl.bind("mainMod + B", hl.dsp.exec_cmd(menu_galery))
 hl.bind("mainMod + V", hl.dsp.exec_cmd(menu_clip))
 hl.bind("mainMod + A", hl.dsp.exec_cmd(menu_translate))
-hl.bind("mainMod + mainC + A", hl.dsp.exec_cmd(menu_translate %-%-copy))
+hl.bind("mainMod + mainC + A", hl.dsp.exec_cmd(menu_translate .. " --copy"))
 hl.bind("mainMod + mainS + D", hl.dsp.exec_cmd(menu_calc))
 
 -- —— Start programs ——————————————————————————————————————
