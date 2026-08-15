@@ -35,5 +35,5 @@
   ],
   
   //Modules configuration
-  "include": ["~/.config/waybar/modules.json"]
+  "include": ["~/.config/waybar/modules.jsonc"]
 }
