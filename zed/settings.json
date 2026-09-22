@@ -9,6 +9,17 @@
 {
   //Трогал
 
+  "context_servers": {
+    
+  },
+  "git": {
+    "blame": {
+      "show_avatar": true
+    },
+    "inline_blame": {
+      "enabled": false
+    }
+  },
   "cli_default_open_behavior": "existing_window",
   "project_panel": {
     "dock": "left"
@@ -20,8 +31,18 @@
     "dock": "left"
   },
   "language_models": {
+    "opencode": {
+      "show_zen_models": false,
+      "show_go_models": false
+    },
+    "openai_compatible": {
+      
+    },
+    "llama.cpp": {
+      "api_url": "http://127.0.0.1:8080"
+    },
     "ollama": {
-      "context_window": 32000,
+      "context_window": 30000,
       "api_url": "http://localhost:11434",
     },
   },
@@ -39,51 +60,32 @@
   "agent": {
     "dock": "right",
     "profiles": {
-      "1": {
-        "default_model": {
-          "provider": "ollama",
-          "model": "qwen2.5-coder:7b",
-          "enable_thinking": false,
-        },
-        "name": "1",
-        "tools": {},
-        "enable_all_context_servers": false,
-        "context_servers": {},
-      },
-      "123": {
-        "default_model": {
-          "provider": "google",
-          "model": "gemini-2.5-flash",
-        },
-        "name": "123",
+      "plan": {
+        "name": "plan",
         "tools": {
-          "diagnostics": true,
-          "edit_file": true,
-          "fetch": true,
-          "find_path": true,
           "list_directory": true,
-          "grep": true,
-          "copy_path": true,
+          "read_file": true,
+          "skill": true
         },
         "enable_all_context_servers": false,
-        "context_servers": {},
-      },
+        "context_servers": {}
+      }
     },
-    "default_profile": "ask",
+    "default_profile": "plan",
     "default_model": {
+      "effort": "minimal",
       "enable_thinking": true,
-      "provider": "ollama",
-      "model": "gemma4:e2b",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
     },
     "model_parameters": [],
   },
   "agent_servers": {
     "opencode": {
-      "default_config_options": {
-        "effort": "high",
-        "mode": "orchestrator",
-        "model": "opencode/deepseek-v4-flash-free"
-      },
+      "type": "registry"
+    },
+    "gemini": {
+      "default_mode": "plan",
       "type": "registry"
     }
   },
@@ -93,11 +95,11 @@
   "title_bar": {
     "show_menus": false,
     "show_branch_name": true,
-    "show_branch_icon": true,
   },
   "ui_font_family": ".ZedSans",
   "buffer_font_family": "JetBrains Mono",
   "auto_update_extensions": {
+    "qml": false,
     "scss": false,
     "html": false,
     "lua": false,
