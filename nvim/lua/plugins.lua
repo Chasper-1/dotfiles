@@ -47,26 +47,7 @@ return {
             end, { desc = "Fuzzy search files" })
         end,
     },
-
-    -- *** ФАЙЛОВЫЙ МЕНЕДЖЕР ***
-    {
-        "nvim-tree/nvim-tree.lua",
-        opts = {
-            disable_netrw = true,
-            hijack_netrw = true,
-            sync_root_dir = true,
-            view = {
-                width = 30,
-            },
-        },
-        keys = {
-            {
-                "<leader>e",
-                "<cmd>NvimTreeToggle<cr>",
-                desc = "Toggle file explorer",
-            },
-        },
-    },
+    
 
     -- *** OBSIDIAN ***
     {
