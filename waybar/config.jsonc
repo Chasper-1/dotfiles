@@ -1,5 +1,8 @@
 // -*- mode: jsonc -*-
 {
+  //Modules configuration
+  "include": ["~/.config/waybar/modules.jsonc"],
+  
   "layer": "top",
       "position": "top",
       "height": 30,
@@ -7,7 +10,6 @@
       "margin-bottom": -2,
   
   // Choose the order of the modules
-   
   "modules-left": [
     "hyprland/workspaces",
     "cpu",
@@ -32,8 +34,5 @@
     "hyprland/language",
     "network",
     "custom/clock"
-  ],
-  
-  //Modules configuration
-  "include": ["~/.config/waybar/modules.jsonc"]
+  ]
 }

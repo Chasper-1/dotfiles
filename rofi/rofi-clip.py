@@ -20,7 +20,7 @@ def main():
         # -kb-custom-2 (Alt+d) -> Exit Code 11 (Удаление выбранного)
         rofi_proc = subprocess.Popen([
             "rofi", "-dmenu",
-            "-p", "Копировать.",
+            "-p", " Копировать",
             "-selected-row", str(row),
             "-format", "i;s",
             "-kb-custom-1", "Alt+1",

@@ -11,14 +11,15 @@ hl.monitor({
 -- —— MY PROGRAMS —————————————————————————————————————————————————————————————————————————————————
 
 local zed = "zeditor"
-local terminal = "kitty"
+local terminal = "kitty --start-as minimized"
 local fileManager = "thunar"
 local menu = "rofi -show drun"
 local menu_calc = "rofi -show calc -theme-str 'listview { columns: 1; }' | wl-copy"
-local menu_clip = "~/.config/rofi/clip-rofi.py"
-local menu_galery = "~/.config/rofi/galery-rofi.sh"
+local menu_clip = "~/.config/rofi/rofi-clip.py"
+local menu_galery = "~/.config/rofi/rofi-galery.sh"
 local menu_translate = "~/.config/rofi/rofi-trans.py"
-local keepass = "cat -u ~/Документы/Secrets/Mypass-local.txt | wl-copy -n && ~/Документы/code/скрипты/timedead.sh & ~/.config/rofi/kpxc-rofi.sh"
+local menu_power = "~/.config/rofi/rofi-power.sh"
+local keepass = "cat -u ~/Документы/Secrets/Mypass-local.txt | wl-copy -n && ~/Документы/code/скрипты/timedead.sh & ~/.config/rofi/rofi-kpxc.sh"
 local cleaner = "~/.local/bin/cleaner"
 
 -- —— AUTOSTART ———————————————————————————————————————————————————————————————————————————————————
@@ -36,7 +37,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("wl-paste --type image --watch cliphist store # Stores only image data")
 
     -- —— Utilits —————————————————————————————————————————————————————————————
-    hl.exec_cmd("awww-daemon & waybar & dunst & hypridle")
+    hl.exec_cmd("awww-daemon & waybar & mako & hypridle")
 
     -- —— Programs ————————————————————————————————————————————————————————————
     hl.exec_cmd("[workspace 1 silent] zen-browser")
@@ -105,7 +106,7 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick",
 -- —— Workspace ———————————————————————————————————————————————————————————————
 hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
 
--- —— Special workspace ———————————————————————————————————————————————————————
+-- —— Create special workspace ———————————————————————————————————————————————————————
 hl.workspace_rule({ workspace = "special:music",})
 hl.workspace_rule({ workspace = "special:terminal",})
 hl.workspace_rule({ workspace = "special:games",})
@@ -166,7 +167,7 @@ hl.window_rule({
 
 -- —— Start window in workspace ———————————————————————————
 hl.window_rule({
-    match = { class = "obsidian", },
+    match = { class = "md.obsidian.Obsidian", },
     workspace = "6",
 })
 
@@ -201,17 +202,17 @@ hl.window_rule({
 })
 
 -- —— Layer ———————————————————————————————————————————————————————————————————
-hl.layer_rule({
-    match = { namespace = "waybar", },
-    blur = true,
-    ignore_alpha = 0,
-})
+--hl.layer_rule({
+--    match = { namespace = "waybar", },
+--    blur = true,
+--    ignore_alpha = 0,
+--    })
 
-hl.layer_rule({
-    match = { namespace = "rofi", },
-    blur = true,
-    ignore_alpha = 0,
-})
+-- hl.layer_rule({
+--    match = { namespace = "rofi", },
+--    blur = true,
+--    ignore_alpha = 0,
+--})
 
 -- ——
 hl.gesture({
@@ -221,7 +222,7 @@ hl.gesture({
 })
 hl.device({
     name = "epic-mouse-v1",
-    sensitivity = -0.5,
+    sensitivity = 0,
 })
 
 -- —— HOTKEYS —————————————————————————————————————————————————————————————————————————————————
@@ -231,6 +232,7 @@ hl.device({
 -- —— Basic ———————————————————————————————————————————————
 hl.bind("ALT + Q", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + C", hl.dsp.window.close())
+hl.bind("SUPER + SHIFT + R", hl.dsp.window.kill())
 hl.bind("SUPER + M", hl.dsp.exit())
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
 hl.bind("SUPER + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
@@ -241,7 +243,6 @@ hl.bind("SUPER + SHIFT + F11", hl.dsp.window.fullscreen({ mode = "fullscreen", a
 -- —— Basic utilits ———————————————————————————————————————
 hl.bind("SUPER + U", hl.dsp.exec_cmd("hyprpicker -a -f rgb"))
 hl.bind("SUPER + SHIFT + P", hl.dsp.exec_cmd(keepass))
-hl.bind("SUPER + T", hl.dsp.exec_cmd("~/.config/rofi/rofi-tran-live.py"))
 hl.bind("SUPER + SHIFT + End", hl.dsp.exec_cmd("~/Документы/code/скрипты/safe_shutdown.sh"))
 hl.bind("CTRL + ALT + D", hl.dsp.exec_cmd(cleaner))
 hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"))
@@ -254,6 +255,7 @@ hl.bind("SUPER + V", hl.dsp.exec_cmd(menu_clip))
 hl.bind("SUPER + A", hl.dsp.exec_cmd(menu_translate))
 hl.bind("SUPER + CTRL + A", hl.dsp.exec_cmd(menu_translate .. " --copy"))
 hl.bind("SUPER + SHIFT + D", hl.dsp.exec_cmd(menu_calc))
+hl.bind("SUPER + End", hl.dsp.exec_cmd(menu_power))
 
 -- —— Start programs ——————————————————————————————————————
 hl.bind("SUPER + Z", hl.dsp.exec_cmd(zed))
@@ -299,8 +301,8 @@ hl.bind("SUPER + CTRL + 0", hl.dsp.focus({ workspace = 20 }))
 -- —— Focus input —————————————————————————————————————————————————————————————
 
 -- —— Mouse ———————————————————————————————————————————————
-hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
 -- —— Keys ————————————————————————————————————————————————
 hl.bind("SUPER + left", hl.dsp.focus({ workspace = "e-1" }))

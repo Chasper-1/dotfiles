@@ -50,12 +50,12 @@
     },
     {
       "type": "wmtheme",
-      "key": "󰉼",
+      "key": "",
       "keyColor": "33"
     },
     {
       "type": "icons",
-      "key": "󰋸",
+      "key": "",
       "keyColor": "93"
     },
 
@@ -101,7 +101,7 @@
     },
     {
       "type": "command", // Сколько дней системе, с момента установки
-      "key": "󱦟",
+      "key": "󱑒",
       "keyColor": "31",
       "text": "/home/kasper/Документы/code/скрипты/time-my-pc.sh"
     },

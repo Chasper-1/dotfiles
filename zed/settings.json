@@ -9,9 +9,44 @@
 {
   //Трогал
 
-  "context_servers": {
-    
+  //"proxy": "socks5://220.121.193.144:1082",
+  "show_edit_predictions": true,
+  "status_bar": {
+    "active_language_button": true,
+    "line_endings_button": true,
+    "show_active_file": true
   },
+  "tab_bar": {
+    "show_tab_bar_buttons": true
+  },
+  "focus_follows_mouse": {
+    "enabled": false,
+    "debounce_ms": 250
+  },
+  "use_system_window_tabs": false,
+  "window_decorations": "client",
+  "fullscreen_mode": "native",
+  "pane_split_direction_horizontal": "down",
+  "pane_split_direction_vertical": "right",
+  "close_panel_on_toggle": false,
+  "active_pane_modifiers": {
+    "border_size": 0.0,
+    "inactive_opacity": 1.0
+  },
+  "zoomed_padding": false,
+  "window_title_format": "${projectName}${separator}${fileName}",
+  "diff_view_style": "unified",
+  "server_url": "https://zed.dev",
+  "context_servers": {
+
+  },
+
+  "languages": {
+    "Markdown": {
+      "soft_wrap": "editor_width"
+    }
+  },
+
   "git": {
     "blame": {
       "show_avatar": true
@@ -22,6 +57,7 @@
   },
   "cli_default_open_behavior": "existing_window",
   "project_panel": {
+    "button": true,
     "dock": "left"
   },
   "outline_panel": {
@@ -36,7 +72,7 @@
       "show_go_models": false
     },
     "openai_compatible": {
-      
+
     },
     "llama.cpp": {
       "api_url": "http://127.0.0.1:8080"
@@ -46,8 +82,8 @@
       "api_url": "http://localhost:11434",
     },
   },
-  "proxy": "",
   "edit_predictions": {
+    "mode": "subtle",
     "provider": "zed",
   },
   "terminal": {
@@ -58,6 +94,20 @@
     },
   },
   "agent": {
+    "single_file_review": true,
+    "play_sound_when_agent_done": "never",
+    "show_merge_conflict_indicator": true,
+    "show_turn_stats": true,
+    "use_modifier_to_send": false,
+    "max_content_width": 1500.0,
+    "default_height": 327.0,
+    "default_width": 640.0,
+    "auto_compact": {
+      "enabled": true
+    },
+    "message_editor_min_lines": 4,
+    "thinking_display": "preview",
+    "notify_when_agent_waiting": "never",
     "dock": "right",
     "profiles": {
       "plan": {
@@ -73,36 +123,56 @@
     },
     "default_profile": "plan",
     "default_model": {
-      "effort": "minimal",
-      "enable_thinking": true,
-      "provider": "google",
-      "model": "gemini-3.1-flash-lite",
+      "enable_thinking": false,
+      "provider": "llama.cpp",
+      "model": "gemma-4-E4B-it-Q5_K_S",
     },
     "model_parameters": [],
   },
   "agent_servers": {
     "opencode": {
+      "default_config_options": {
+        "mode": "build",
+        "effort": "high",
+        "model": "opencode/deepseek-v4.1-flash-free"
+      },
+      "type": "registry"
+    },
+    "pi-acp": {
+      "default_config_options": {
+        "model": "llama-cpp/Qwen3.8-4B-Q5_K_M",
+        "thought_level": "medium"
+      },
       "type": "registry"
     },
     "gemini": {
-      "default_mode": "plan",
+      "default_mode": "default",
       "type": "registry"
     }
   },
   "tabs": {
+    "file_icons": true,
     "git_status": false,
   },
   "title_bar": {
+    "show_branch_status_icon": false,
+    "show_worktree_name": true,
+    "show_project_items": true,
+    "show_onboarding_banner": false,
+    "show_sign_in": true,
+    "show_user_menu": true,
+    "show_user_picture": false,
     "show_menus": false,
     "show_branch_name": true,
   },
   "ui_font_family": ".ZedSans",
   "buffer_font_family": "JetBrains Mono",
   "auto_update_extensions": {
-    "qml": false,
-    "scss": false,
-    "html": false,
-    "lua": false,
+    "dockerfile": true,
+    "qml": true,
+    "scss": true,
+    "html": true,
+    "lua": true,
     "catppuccin": false,
   },
   "git_panel": {
@@ -117,10 +187,14 @@
   },
   "soft_wrap": "editor_width",
   "bottom_dock_layout": "contained",
-  "git_status": "true",
-  "activate_on_close": "neighbour",
-  "hour_format": "hour24",
+  //"git_status": "true",
+  //"activate_on_close": "neighbour",
+  //"hour_format": "hour24",
   "preview_tabs": {
+    "enable_preview_from_project_panel": true,
+    "enable_preview_from_multibuffer": true,
+    "enable_preview_multibuffer_from_code_navigation": false,
+    "enable_preview_file_from_code_navigation": true,
     "enabled": true,
     "enable_preview_from_file_finder": true,
     "enable_keep_preview_on_code_navigation": false,
