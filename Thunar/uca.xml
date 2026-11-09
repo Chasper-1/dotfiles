@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>kitty</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1758634772698086-1</unique-id>
+	<command>kitty --start-as minimized -d %f</command>
+	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+	<text-files/>
+</action>
+<action>
+	<icon>livewallpaper</icon>
+	<name>Установить как обои hyprland</name>
+	<submenu></submenu>
+	<unique-id>1759239259363145-1</unique-id>
+	<command>swww img %f</command>
+	<description>Меняет обои через swww утилиту</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>edit-copy</icon>
+	<name>Скопировать путь файла</name>
+	<submenu></submenu>
+	<unique-id>1761739921086436-1</unique-id>
+	<command>wl-copy %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>application-running</icon>
+	<name>Запустить</name>
+	<submenu></submenu>
+	<unique-id>1761814543072767-1</unique-id>
+	<command>kitty --start-as minimized -d %d sh -c &apos;./%n; read -p &quot;Нажмите любую клавишу для закрытия...&quot; -n 1&apos;</command>
+	<description>Запускает бинарники, скрипты. Всё ,что можно запустить через { ./ }</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>indicator-sensors-disk</icon>
+	<name>Занятое место</name>
+	<submenu></submenu>
+	<unique-id>1770288249392798-1</unique-id>
+	<command>/home/kasper/Документы/code/скрипты/Storage_btrfs.sh %f</command>
+	<description>Реальное занятое место при сжатии brtfs или другом вмешательстве файловой системы</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>text-x-rust</icon>
+	<name>Скомпилировать Rust</name>
+	<submenu></submenu>
+	<unique-id>1770731564414107-1</unique-id>
+	<command>/home/kasper/Документы/code/скрипты/compilling-rust.sh %f</command>
+	<description>Компилирует Cargo или .rs</description>
+	<range>*1</range>
+	<patterns>*.rs;*-rust*;*rusty-*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+</actions>
