@@ -40,15 +40,15 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("awww-daemon & waybar & mako & hypridle")
 
     -- —— Programs ————————————————————————————————————————————————————————————
-    hl.exec_cmd("[workspace 1 silent] zen-browser")
-    hl.exec_cmd("[workspace special:terminal silent]" .. terminal)
+    -- hl.exec_cmd("[workspace 1 silent] chromium")
+    -- hl.exec_cmd("[workspace special:terminal silent]" .. terminal)
 end)
 
 -- —— ENVIRONMENT VARIABLES ———————————————————————————————————————————————————————————————————————
 
-hl.env("XCURSOR_THEME", "GoogleDot-White")
-hl.env("XCURSOR_SIZE", "20")
-hl.env("HYPRCURSOR_SIZE", "20")
+-- hl.env("XCURSOR_THEME", "GoogleDot-White")
+-- hl.env("XCURSOR_SIZE", "20")
+-- hl.env("HYPRCURSOR_SIZE", "20")
 hl.env("TERMINAL", "kitty")
 
 -- —— PERMISSIONS —————————————————————————————————————————————————————————————————————————————————
@@ -197,8 +197,13 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "com.github.wwmm.easyeffects",},
+    match = { class = "com.github.wwmm.easyeffects" },
     workspace = "special:easyeffects silent",
+})
+
+hl.window_rule({
+    match = { class = "chrome-agimnkijcaahngcdmfeangaknmldooml-Default", },
+    workspace = "special:magic",
 })
 
 -- —— Layer ———————————————————————————————————————————————————————————————————

@@ -1,7 +1,7 @@
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;librewolf.desktop;
 x-scheme-handler/https=firefox.desktop;librewolf.desktop;
-text/html=dev.zed.Zed.desktop;firefox.desktop;librewolf.desktop;
+text/html=chromium.desktop;dev.zed.Zed.desktop;firefox.desktop;librewolf.desktop;
 application/xhtml+xml=firefox.desktop;librewolf.desktop;
 image/jpeg=swayimg.desktop;org.kde.krita.jpeg.desktop;imv.desktop;com.interversehq.qView.desktop;mirage.desktop;swappy.desktop;
 image/gif=swayimg.desktop;
@@ -12,8 +12,8 @@ application/zip=xarchiver.desktop;
 image/svg+xml=swayimg.desktop;
 application/x-resolveproj=com.blackmagicdesign.resolve.desktop;
 text/x-python=dev.zed.Zed.desktop;vim.desktop;
-application/vnd.microsoft.portable-executable=wine.desktop;com.usebottles.bottles.desktop;ru.linux_gaming.PortProton.desktop;
-application/x-msdownload=wine.desktop;com.usebottles.bottles.desktop;xarchiver.desktop;ru.linux_gaming.PortProton.desktop;
+application/vnd.microsoft.portable-executable=wine.desktop;PortProton.desktop;com.usebottles.bottles.desktop;ru.linux_gaming.PortProton.desktop;
+application/x-msdownload=PortProton.desktop;wine.desktop;com.usebottles.bottles.desktop;xarchiver.desktop;ru.linux_gaming.PortProton.desktop;
 application/xml=
 x-scheme-handler/tg=io.github.tdesktop_x64.TDesktop.desktop;
 x-scheme-handler/tonsite=io.github.tdesktop_x64.TDesktop.desktop;
@@ -71,7 +71,7 @@ application/vnd.rar=xarchiver.desktop;thunar.desktop;
 application/octet-stream=dev.zed.Zed.desktop;nvim.desktop;
 image/vnd.zbrush.pcx=mirage.desktop;
 audio/mp4=mpv.desktop;
-text/markdown=nvim.desktop;dev.zed.Zed.desktop;
+text/markdown=obsidian.desktop;nvim.desktop;dev.zed.Zed.desktop;
 application/wasm=dev.zed.Zed.desktop;
 application/appinstaller=zen.desktop;
 text/x-dsrc=dev.zed.Zed.desktop;
@@ -84,6 +84,8 @@ image/webp=swayimg.desktop;org.kde.krita.desktop;
 text/x-csrc=dev.zed.Zed.desktop;
 video/matroska=io.github.celluloid_player.Celluloid.desktop;mpv.desktop;
 application/postscript=dev.zed.Zed.desktop;
+audio/mpeg=audacity.desktop;
+audio/vnd.wave=audacity.desktop;
 
 [Default Applications]
 inode/directory=thunar.desktop
@@ -171,3 +173,4 @@ text/csv=dev.zed.Zed.desktop
 application/vnd.sqlite3=dbgate.desktop
 audio/x-opus+ogg=io.github.celluloid_player.Celluloid.desktop
 x-scheme-handler/nekoray=x-scheme-handler-iblis.desktop
+application/x-ms-dos-executable;application/x-wine-extension-msp;application/x-msi;application/x-msdos-program;text/win-bat;=PortProton.desktop

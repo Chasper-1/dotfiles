@@ -75,7 +75,7 @@
 
     },
     "llama.cpp": {
-      "api_url": "http://127.0.0.1:8080"
+      "api_url": "http://localhost:8080"
     },
     "ollama": {
       "context_window": 30000,
@@ -125,7 +125,7 @@
     "default_model": {
       "enable_thinking": false,
       "provider": "llama.cpp",
-      "model": "gemma-4-E4B-it-Q5_K_S",
+      "model": "Qwen3.8-4B-Q5_K_M",
     },
     "model_parameters": [],
   },
@@ -133,8 +133,8 @@
     "opencode": {
       "default_config_options": {
         "mode": "build",
-        "effort": "high",
-        "model": "opencode/deepseek-v4.1-flash-free"
+        "effort": "low",
+        "model": "opencode/glm-5.3-flash-free"
       },
       "type": "registry"
     },

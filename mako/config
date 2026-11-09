@@ -1,0 +1,103 @@
+# Mako configuration file
+# See mako(5) for all configuration options
+#
+# Ported from dunst (dunstrc) — Everforest theme
+#
+# IMPORTANT: mako does NOT allow leading whitespace/indentation.
+
+# Font (Pango description). dunst used "FiraCode Nerd Font"; Inter is used here.
+font=Inter 12
+
+# Background / text / border colors (Everforest)
+background-color=#272e33
+text-color=#d3c6aa
+border-color=#d3c6aa
+
+# Frame width (dunst frame_width=2)
+border-size=2
+
+# Corner radius (dunst corner_radius=8)
+border-radius=8
+
+# Transparency (dunst transparency=5). Mako uses alpha on background.
+# 5% transparency -> alpha ~0.95. Uncomment to enable.
+#background-color=#272e33f2
+
+# Width (dunst width=(0, 500))
+width=280
+
+# Height (dunst height=(0, 300))
+height=300
+
+# Position (dunst origin=top-right)
+anchor=top-right
+
+# Offset from origin (dunst offset=(20, 20))
+outer-margin=20,20,20,20
+
+# Gap between notifications (dunst gap_size=8)
+margin=8
+
+# Padding (dunst padding=8, horizontal_padding=8)
+padding=8
+
+# Maximum number of visible notifications (dunst notification_limit=20)
+max-visible=20
+
+# Markup (dunst markup=full)
+markup=1
+
+# Format (dunst format="<b>%s</b>\n%b")
+format=<b>%s</b>\n%b
+
+# Text alignment (dunst alignment=left)
+text-alignment=left
+
+# Icons (dunst icon_position=left, max_icon_size=1024)
+icons=1
+icon-location=left
+max-icon-size=1024
+
+# Icon theme (dunst icon_theme=Papirus-Dark)
+icon-path=/usr/share/icons/Papirus-Dark
+
+# History length (dunst history_length=50)
+max-history=50
+
+# Default timeout in ms (dunst urgency_normal timeout=5)
+default-timeout=5000
+
+# Mouse actions (dunst left=close_current, middle=do_action, right=close_all)
+on-button-left=dismiss
+on-button-middle=invoke-default-action
+on-button-right=dismiss-all
+
+# Group notifications by app (dunst stack_duplicates=true)
+group-by=app-name
+
+# Sort (dunst sort=yes)
+sort=-time
+
+# Layer (dunst default=overlay)
+layer=overlay
+
+# Low urgency (dunst [urgency_low])
+[urgency=low]
+background-color=#272e33
+text-color=#d3c6aa
+border-color=#d3c6aa
+default-timeout=3000
+
+# Normal urgency (dunst [urgency_normal])
+[urgency=normal]
+background-color=#272e33
+text-color=#d3c6aa
+border-color=#d3c6aa
+default-timeout=5000
+
+# Critical urgency (dunst [urgency_critical])
+[urgency=critical]
+background-color=#e67e80
+text-color=#272e33
+border-color=#ff6666
+default-timeout=0

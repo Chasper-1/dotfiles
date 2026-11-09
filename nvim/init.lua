@@ -15,9 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 -- Загрузка всех плагинов из файла lua/plugins.lua
 require("lazy").setup(require("plugins"))
 
-
 -- Загрузка конфигов 
--- lua/config.lua
+-- lua/
 require("config")
 require("keymap")
 require("autocmd")
